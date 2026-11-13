@@ -146,7 +146,9 @@ npm run package       # NSIS installer
 npm run package:dir   # unpacked build, faster for smoke testing
 ```
 
-Packaged artifacts land in `release/`. The current configuration is Windows-first. The app has no code-signing certificate configured, so Windows SmartScreen may warn on first launch. To sign releases, add your certificate configuration to the `build.win` section of `package.json` or provide the usual electron-builder environment variables.
+Packaged artifacts land in `release/`. The current configuration is Windows-first. Pushing a `v*` tag runs [`.github/workflows/release.yml`](.github/workflows/release.yml), builds the installer, and attaches it to a GitHub release.
+
+The app has no code-signing certificate configured, so Windows SmartScreen may warn on first launch. To sign releases, add your certificate configuration to the `build.win` section of `package.json` or provide the usual electron-builder environment variables.
 
 macOS and Linux can run from source today. Adding `dmg` / `AppImage` targets to `build` is a good first packaging contribution.
 
