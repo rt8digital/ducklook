@@ -1,0 +1,103 @@
+name: Bug report
+description: Report a reproducible problem in DuckLook
+title: 'bug: '
+labels: ['bug', 'needs-triage']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please search existing issues first.
+
+        **Do not include passwords, app passwords, tokens, private hostnames, or message contents.** For security vulnerabilities, follow SECURITY.md instead of opening a public issue.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: A clear description of the problem and its impact.
+      placeholder: When I open Settings → Accounts and click Sync, the app...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps that reliably trigger the issue.
+      placeholder: |
+        1. Add an IMAP account
+        2. Open the inbox
+        3. Press R on a message
+        4. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: DuckLook version or commit
+      placeholder: v0.1.0, or the output of `git rev-parse --short HEAD`
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: Windows 11 24H2, macOS 15.1, Ubuntu 24.04...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install
+    attributes:
+      label: How are you running DuckLook?
+      options:
+        - npm run dev
+        - npm start (built from source)
+        - Packaged build (release/)
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: input
+    id: provider
+    attributes:
+      label: Mail provider and protocol
+      description: Provider name only. Do not include credentials or full addresses if sensitive.
+      placeholder: Fastmail, IMAP; or self-hosted POP3
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs, console output, or screenshots
+      description: Redact credentials and message contents before pasting.
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: I removed credentials, tokens, and private message contents from this report.
+          required: true
+        - label: This is not a security vulnerability (those go through SECURITY.md).
+          required: true

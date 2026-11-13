@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/rt8digital/ducklook/security/policy
+    about: Please report vulnerabilities privately. Do not open a public issue.
+  - name: Questions and ideas
+    url: https://github.com/rt8digital/ducklook/discussions
+    about: Ask for help, share a setup, or discuss a broad idea before opening an issue.

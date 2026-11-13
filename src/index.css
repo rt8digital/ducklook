@@ -1,0 +1,138 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  code,
+  pre,
+  .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #0F6CBD;
+    outline-offset: 2px;
+  }
+
+  .dark *:focus-visible {
+    outline-color: #479EF5;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.email-body-prose {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: inherit;
+  word-break: break-word;
+}
+
+.email-body-prose p {
+  margin-bottom: 0.75rem;
+}
+
+.email-body-prose ul,
+.email-body-prose ol {
+  margin: 0.5rem 0 0.75rem 1.25rem;
+  list-style-position: outside;
+}
+
+.email-body-prose ul {
+  list-style-type: disc;
+}
+
+.email-body-prose ol {
+  list-style-type: decimal;
+}
+
+.email-body-prose a {
+  color: #0F6CBD;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.dark .email-body-prose a {
+  color: #479EF5;
+}
+
+.email-body-prose blockquote {
+  margin: 0.75rem 0;
+  padding-left: 0.875rem;
+  border-left: 1px solid rgba(128, 128, 128, 0.35);
+  opacity: 0.85;
+}
+
+.email-body-prose table {
+  border-collapse: collapse;
+  max-width: 100%;
+  margin: 0.75rem 0;
+  font-size: 13px;
+}
+
+.email-body-prose th,
+.email-body-prose td {
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.email-body-prose pre,
+.email-body-prose code {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 128, 0.28);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 120, 128, 0.45);
+}

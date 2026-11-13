@@ -1,0 +1,100 @@
+{
+  "name": "ducklook",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A local-first desktop email client for IMAP, POP3, and SMTP mailboxes, with calendar, contacts, and tasks.",
+  "author": "DuckLook",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist-electron/main.cjs",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rt8digital/ducklook.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rt8digital/ducklook/issues"
+  },
+  "homepage": "https://github.com/rt8digital/ducklook#readme",
+  "keywords": [
+    "email",
+    "mail",
+    "imap",
+    "pop3",
+    "smtp",
+    "electron",
+    "react",
+    "local-first",
+    "desktop"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "npm run build:renderer && npm run build:main",
+    "build:renderer": "node node_modules/vite/bin/vite.js build",
+    "build:main": "node scripts/build-electron.mjs",
+    "start": "node scripts/start.mjs",
+    "package": "npm run build && node scripts/electron-builder.mjs --win",
+    "package:dir": "npm run build && node scripts/electron-builder.mjs --win --dir",
+    "lint": "node node_modules/typescript/bin/tsc --noEmit",
+    "test:api": "node scripts/test-api.mjs",
+    "postinstall": "node scripts/electron-builder.mjs install-app-deps"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.1.1",
+    "dompurify": "^3.4.17",
+    "imapflow": "^2.11.0",
+    "lucide-react": "^0.546.0",
+    "mailparser": "^3.14.3",
+    "motion": "^12.23.24",
+    "nodemailer": "^10.5.0",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/dompurify": "^3.0.5",
+    "@types/mailparser": "^3.9.0",
+    "@types/node": "^22.14.0",
+    "@types/nodemailer": "^8.0.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "autoprefixer": "^10.4.21",
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.12",
+    "esbuild": "^0.28.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0"
+  },
+  "build": {
+    "appId": "com.ducklook.mail",
+    "productName": "DuckLook",
+    "asar": true,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/main.cjs",
+      "dist-electron/preload.cjs",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "**/node_modules/better-sqlite3/**"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
+  }
+}
