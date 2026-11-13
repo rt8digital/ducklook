@@ -28,6 +28,9 @@ jobs:
       - name: Type-check
         run: npm run lint
 
+      - name: Build renderer and Electron bundles
+        run: npm run build
+
       - name: Build and publish
         run: node scripts/electron-builder.mjs --win --publish always
         env:
