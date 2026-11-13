@@ -44,6 +44,10 @@ function registerIpcHandlers() {
 }
 
 async function createWindow() {
+  const icon = app.isPackaged
+    ? path.join(__dirname, '..', 'dist', 'logo.png')
+    : path.join(__dirname, '..', 'public', 'logo.png');
+
   mainWindow = new BrowserWindow({
     width: 1440,
     height: 900,
@@ -52,6 +56,7 @@ async function createWindow() {
     show: false,
     backgroundColor: '#F5F5F5',
     title: 'DuckLook',
+    icon,
     webPreferences: {
       preload: path.join(__dirname, 'preload.cjs'),
       contextIsolation: true,

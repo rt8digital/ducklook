@@ -3,7 +3,6 @@ import {
   CheckCircle2,
   Inbox,
   Loader2,
-  Mail,
   Server,
   ShieldCheck,
   XCircle,
@@ -132,8 +131,8 @@ export function WelcomeView({ onComplete }: WelcomeViewProps) {
           <aside className="relative hidden flex-col justify-between bg-gradient-to-br from-[#0F6CBD] to-[#07447A] p-8 text-white lg:flex">
             <div>
               <div className="flex items-center gap-2.5">
-                <div className="grid h-10 w-10 place-items-center rounded-lg bg-white/15">
-                  <Mail className="h-5 w-5" aria-hidden="true" />
+                <div className="grid h-10 w-10 place-items-center rounded-lg bg-white/15 p-1">
+                  <img src="./logo.png" alt="" aria-hidden="true" className="h-full w-full object-contain" />
                 </div>
                 <span className="font-display text-lg font-semibold">DuckLook</span>
               </div>

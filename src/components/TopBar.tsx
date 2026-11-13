@@ -83,6 +83,12 @@ export function TopBar({
             <Menu className="w-5 h-5" aria-hidden="true" />
           </button>
         )}
+        <img
+          src="./logo.png"
+          alt=""
+          aria-hidden="true"
+          className="h-7 w-7 shrink-0 object-contain"
+        />
         <span className="font-display font-semibold text-base tracking-tight whitespace-nowrap shrink-0">
           DuckLook
         </span>

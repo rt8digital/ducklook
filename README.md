@@ -1,15 +1,21 @@
-# DuckLook
+<p align="center">
+  <img src="assets/logo.png" alt="DuckLook duck detective mascot" width="200" />
+</p>
 
-**A local-first desktop email client for IMAP, POP3, and SMTP — with mail, calendar, contacts, and tasks in one calm workspace.**
+<h1 align="center">DuckLook</h1>
+
+<p align="center"><strong>A local-first desktop email client for IMAP, POP3, and SMTP — with mail, calendar, contacts, and tasks in one calm workspace.</strong></p>
+
+<p align="center">
+  <a href="https://github.com/rt8digital/ducklook/actions/workflows/ci.yml"><img src="https://github.com/rt8digital/ducklook/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT" /></a>
+  <img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-4B5563" alt="Platforms" />
+  <a href="https://www.electronjs.org/"><img src="https://img.shields.io/badge/Electron-38-47848F?logo=electron&logoColor=white" alt="Electron 38" /></a>
+  <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-19-087EA4?logo=react&logoColor=white" alt="React 19" /></a>
+  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white" alt="TypeScript" /></a>
+</p>
 
 DuckLook is a privacy-minded alternative to webmail and cloud-only mail clients. Your messages, events, contacts, and to-dos live in a local SQLite database on your computer. There is no DuckLook account, no telemetry, and no local HTTP server: the UI talks to the Electron main process over a locked-down IPC bridge.
-
-[![CI](https://github.com/rt8digital/ducklook/actions/workflows/ci.yml/badge.svg)](https://github.com/rt8digital/ducklook/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Platforms](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-4B5563)](#quick-start)
-[![Electron](https://img.shields.io/badge/Electron-38-47848F?logo=electron&logoColor=white)](https://www.electronjs.org/)
-[![React](https://img.shields.io/badge/React-19-087EA4?logo=react&logoColor=white)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
 > **Project status:** early, actively developed, and open to contributors. Windows is the primary packaged target today; macOS and Linux run from source and can be packaged with electron-builder.
 
